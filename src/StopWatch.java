@@ -1,11 +1,7 @@
-import java.sql.Date;
 import java.util.Calendar;
 
 public class StopWatch {
     private double startTime, endTime;
-    public static void main(String[] args) {
-
-    }
 
     public StopWatch() {
         Calendar calendar = Calendar.getInstance();

@@ -1,6 +1,13 @@
+import java.util.Arrays;
+
 public class SelectionSort {
+
     public static void main(String[] args) {
         long[] arr = initArray();
+//        long[] testArr = {3,2,1,5,6,135,16,7,1234,56,8,6};
+//        long[] newArr = sort(arr);
+//        System.out.println(Arrays.toString(newArr));
+
         StopWatch stopWatch = new StopWatch();
         stopWatch.start();
         System.out.println(stopWatch.getStartTime());
@@ -16,16 +23,19 @@ public class SelectionSort {
         }
         return arr;
     }
-    public static void sort(long[] arr){
-        long[] newArr = new long[arr.length];
+    public static long[] sort(long[] arr){
         for(int i =0; i < arr.length; i++){
             long min = arr[i];
-            for (int j = 0; j < arr.length - 1; j++){
+            int tempIndex = i;
+            for (int j = i+1; j < arr.length ; j++){
                 if (min > arr[j]){
                     min = arr[j];
+                    tempIndex = j;
                 }
             }
-            newArr[i] = min;
+            arr[tempIndex] = arr [i];
+            arr[i] = min;
         }
+        return arr;
     }
 }
